@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AntEagle</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=-1.2,user-scalable=0">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- <link rel="stylesheet" href="assets/css/main.sass"> -->
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+  <style>
+   
+   /* title css */
+
+   .ag-format-container {
+  width: 200px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: black;
+}
+.ag-neon_box {
+  margin: 50px 0 0;
+
+  z-index: 1;
+  position: relative;
+}
+.ag-neon {
+  height: 24px;
+  width: 28px;
+
+  position: absolute;
+  top: 13px;
+}
+.ag-neon_inner {
+  margin: 10px 0 10px 4px;
+
+  position: relative;
+}
+.ag-neon_inner,
+.ag-neon_inner:after,
+.ag-neon_inner:before {
+  height: 4px;
+  width: 24px;
+  background-color: #68b9f5;
+
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+
+  -webkit-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  -moz-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  -o-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+
+  -webkit-animation: an-neon-spark .08s 0s infinite;
+  -moz-animation: an-neon-spark .08s 0s infinite;
+  -o-animation: an-neon-spark .08s 0s infinite;
+  animation: an-neon-spark .08s 0s infinite;
+}
+.ag-neon_inner:after,
+.ag-neon_inner:before {
+  content: "";
+
+  position: absolute;
+}
+.ag-neon_left {
+  left: -10px;
+}
+.ag-neon_left .ag-neon_inner:after {
+  top: 10px;
+  left: -4px;
+}
+.ag-neon_left .ag-neon_inner:before {
+  left: -4px;
+  bottom: 10px;
+}
+.ag-neon_right {
+  right: -12px;
+}
+.ag-neon_right .ag-neon_inner {
+  margin: 10px 0;
+}
+.ag-neon_right .ag-neon_inner:after {
+  top: 10px;
+  right: -2px;
+}
+.ag-neon_right .ag-neon_inner:before {
+  bottom: 10px;
+  right: -2px;
+}
+.ag-neon_box:after,
+.ag-neon_box:before {
+  content: "";
+  height: 4px;
+  width: calc(100% + 4px);
+  background-color: #68b9f5;
+
+  z-index: 0;
+  position: absolute;
+  left: -2px;
+  right: -2px;
+
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+
+  -webkit-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  -moz-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  -o-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+
+  -webkit-animation: an-neon-spark .08s 0s infinite;
+  -moz-animation: an-neon-spark .08s 0s infinite;
+  -o-animation: an-neon-spark .08s 0s infinite;
+  animation: an-neon-spark .08s 0s infinite;
+}
+.ag-neon_box:after {
+  top: -2px;
+}
+.ag-neon_box:before {
+  bottom: -2px;
+}
+.ag-neon_text {
+  height: 48px;
+  line-height: 48px;
+
+  white-space: nowrap;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+
+@-webkit-keyframes an-neon-spark {
+  0% {
+    background-color: #68b9f5;
+    
+    -webkit-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+  50% {
+    background-color: #f8fcff;
+    
+    -webkit-box-shadow: inset 0 1px 0 0 #0bf, inset 0 2px 0 0 #b5e4ff, inset 0 -1px 0 0 #054cff, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 1px 0 0 #0bf, inset 0 2px 0 0 #b5e4ff, inset 0 -1px 0 0 #054cff, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+  to {
+    background-color: #68b9f5;
+    
+    -webkit-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+}
+@-moz-keyframes an-neon-spark {
+  0% {
+    background-color: #68b9f5;
+    
+    -moz-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+  50% {
+    background-color: #f8fcff;
+    
+    -moz-box-shadow: inset 0 1px 0 0 #0bf, inset 0 2px 0 0 #b5e4ff, inset 0 -1px 0 0 #054cff, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 1px 0 0 #0bf, inset 0 2px 0 0 #b5e4ff, inset 0 -1px 0 0 #054cff, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+  to {
+    background-color: #68b9f5;
+    
+    -moz-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+}
+@-o-keyframes an-neon-spark {
+  0% {
+    background-color: #68b9f5;
+
+    -o-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+  50% {
+    background-color: #f8fcff;
+
+    -o-box-shadow: inset 0 1px 0 0 #0bf, inset 0 2px 0 0 #b5e4ff, inset 0 -1px 0 0 #054cff, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 1px 0 0 #0bf, inset 0 2px 0 0 #b5e4ff, inset 0 -1px 0 0 #054cff, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+  to {
+    background-color: #68b9f5;
+
+    -o-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+}
+@keyframes an-neon-spark {
+  0% {
+    background-color: #68b9f5;
+    
+    -webkit-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    -moz-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    -o-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+  50% {
+    background-color: #f8fcff;
+    
+    -webkit-box-shadow: inset 0 1px 0 0 #0bf, inset 0 2px 0 0 #b5e4ff, inset 0 -1px 0 0 #054cff, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    -moz-box-shadow: inset 0 1px 0 0 #0bf, inset 0 2px 0 0 #b5e4ff, inset 0 -1px 0 0 #054cff, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    -o-box-shadow: inset 0 1px 0 0 #0bf, inset 0 2px 0 0 #b5e4ff, inset 0 -1px 0 0 #054cff, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 1px 0 0 #0bf, inset 0 2px 0 0 #b5e4ff, inset 0 -1px 0 0 #054cff, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+  to {
+    background-color: #68b9f5;
+    
+    -webkit-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    -moz-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    -o-box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+    box-shadow: inset 0 0 3px #003aa9, 0 0 4px #0073c5, 0 0 8px #0092ff, 0 0 16px #0073ff;
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+
+}
+
+@media only screen and (max-width: 639px) {
+
+}
+
+@media only screen and (max-width: 479px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .ag-format-container {
+    width: 750px;
+  }
+
+}
+
+@media (min-width: 980px) and (max-width: 1161px) {
+  .ag-format-container {
+    width: 960px;
+  }
+
+}
+
+#title{
+      position: absolute;
+      right: 412px;
+      top: -38px;
+      cursor: pointer;
+      
+}
+
+  </style>
+</head>
+
+<body>
+
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <img src="assets/img/o.png" alt="Global">
+    <p>Global</p>
+  </a>
+  <p class="device-notification--message">Global has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
+</div>
+
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <img src="assets/img/o.png" alt="Global" height="80px" style="transform: translateY(10%);filter: brightness(1.75);">
+         <p style="margin-top: 4%;">ANTEAGLE</p> 
+          </a>
+          
+         <!-- title -->
+          <div class="ag-format-container" id="title" onclick="javascript:location.href='https://ico.anteagle.tech'">
+            <div class="ag-neon_box">
+              <div class="ag-neon ag-neon_left">
+                <div class="ag-neon_inner"></div>
+              </div>
+              <div class="ag-neon_text">ICO is live</div>
+              <div class="ag-neon ag-neon_right">
+                <div class="ag-neon_inner"></div>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="javascript:window.location='https://exchange.anteagle.tech'" class="glow-on-hover" style="margin-right: -57rem;" type="button">ANTEAGLE EXCHANGE</button>
+          <div class="header--nav-toggle">
+            
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Home</span></li>
+            <li><span>Rendering</span></li>
+            <li><span>Staking</span></li>
+            <li><span>Insurance</span></li>
+            <li><span>Roadmap</span></li>
+            <li><span>Tokenomics</span></li>  
+            <li><span>Team</span></li> 
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1 style="transform: translateY(60%);margin-left: 5%;" >Welcome
+                 to<br>Antnet<br>Ecosystem</h1>
+               <div class="intro--line">
+                <img src="assets/img/i.png" alt="Welcome"  style="transform: translateX(15%);mix-blend-mode: multiply;">
+               </div>
+                
+              </div>
+              <div class="intro--options">
+                <a href="#0">
+                  <h3 style="text-align:center;">Video Rendering </h3>
+                  <p>Revolutionary video rendering service to boost up your creativity, Export your edited videos in just a click  with the support of sarvvid blockchain</p>
+                </a>
+                <a href="#0">
+                  <h3>Yield Farming</h3>
+                  <p>Do more than just <strong>HODL</strong> your currency, make your currency earn for you :- AntEagle Yield Farming</p>
+                </a>
+                <a href="#0">
+                  <h3>Cryptocurrency Insurance</h3>
+                  <p>Do not fear with rapidly changes prices of crypto market, insured your every trade with us :- EagleToken</p>
+                </a>
+              </div>
+            </div>
+          </li>
+           <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>Video<br>Rendering</h2>
+               
+                <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: lighter;">
+              We provide services of decentralised video rendering where we render
+               your <br>video using a decentralised method which involves various
+                servers that<br> take fragments of your video and complete the process 
+                in much<br> less time than your single server.<br>
+
+What you get -<br>
+Your precious time<br>
+Quick service<br>
+Safe and decentralised transaction<br> 
+
+              <br> <br>
+             <div>
+              <a href="l.html">Read More
+           
+                  <span>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                  </span>
+                </a></div>
+                <div class="div_image">
+                  <img src="assets/img/b.jpg" alt="About Us">
+                </div>
+                <img src="assets/img/b.jpg" alt="About Us" style="height:400px;display: none; ">
+              </div> </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2 >Yield <br>Farming</h2>
+               
+                <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: lighter;">
+
+                 Yield farming is a service where you lend us your crypto<br>
+                  currency and we work on generating a return upto 291-311%<br> on your crypto asset.
+<br>
+What will you do -
+<br>
+Save your time and efforts<br>
+Increase your assets<br>
+
+Exciting BONUS - you will be getting all your asset<br> crypto along with interest in the form of our leading cryptocurrency.
+           
+                 
+
+             
+
+              <br> <br>  <br>
+              <div>
+              <a href="g.html">Read More
+           
+                  <span>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <div class="div_image1">
+                <img src="assets/img/e.png" alt="About Us" class="div_image_img" >
+              </div>
+          
+              </div>
+              
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+
+                <h2 style="padding-top: -1%;">Crypto -<br> currency<br>Insurance</h2>
+               
+                <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: lighter;">
+              Forget the fear of losing your investment in crypto by joining your hands<br>
+               with us in making this crypto more insured.
+We provide insurance <br>to your cryptocurrency portfolio which will help you to invest freely<br>
+
+              
+
+              <br> <br>  <br>
+              <div>
+
+            
+              <a href="h.html">Read More
+           
+                  <span>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <div class="div_image">
+                <img src="assets/img/w.png" alt="About Us" style="height:300px;padding-right: 20px;">
+
+              </div>
+
+              </div>
+              
+            </div>
+          </li>
+   
+
+           <li class="l-section section">
+            <h1 style="margin-top: 10rem; position: fixed; margin-left:4rem; font-size: 3rem;">Road Map</h1>
+            <div class="timeline" style="margin-top: 16rem;"> 
+              <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+                <div class="timeline__event__icon ">
+                  <i class="lni-cake"></i>
+            
+                </div>
+                <div class="timeline__event__date">
+                  July-2020 to January-2021
+                </div>
+                <div class="timeline__event__content" style="background-color:#161616">
+                  <div class="timeline__event__title">
+                    Developement
+                  </div>
+                  <div class="timeline__event__description">
+                    <p>Developement of decentralised video rendering service, Smart contract developement for yield farming</p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+                <div class="timeline__event__icon">
+                  <i class="lni-burger"></i>
+            
+                </div>
+                <div class="timeline__event__date">
+                  Febuary-2021 to October-2021
+                </div>
+                <div class="timeline__event__content" style="background-color:#161616">
+                  <div class="timeline__event__title">
+                    Releasing Tokens
+                  </div>
+                  <div class="timeline__event__description">
+                    <p>Releasing three tokens holding three best services with their ICO on decided date</p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline__event animated fadeInUp delay-1s timeline__event--type3 ">
+                <div class="timeline__event__icon">
+                  <i class="lni-slim"></i>
+            
+                </div>
+                <div class="timeline__event__date ">
+                  November-2021 to June-2022
+                </div>
+                <div class="timeline__event__content" style="background-color:#161616">
+                  <div class="timeline__event__title">
+                    Create blockchain
+                  </div>
+                  <div class="timeline__event__description">
+                    <p>Creating own blockchain which support para blochain at same time and many more features</p>
+                  </div>
+            
+                </div>
+              </div>
+             
+              
+            </div>
+            <a href="#" class="btn-flip" data-back="Roadmap"  data-front="View Full"></a>
+
+
+
+
+          </li>
+
+           
+          
+<li class="l-section section">
+
+            <div class="about">
+              <div class="about--banner">
+
+                <h2 class="token" style="padding-top: 8%;">Tokenomics</h2>
+               
+                
+                <p class="transform4" >
+                  Whole Antnet Ecosystem is divided into<br> three main token. Each has thier own value attached with it.Click any of the three to find out more
+                </p>
+
+
+                <img src="assets/img/p.jpg" alt="About Us" class="token-image" style="height:400px;padding-right: 20px;">  
+
+              </div>
+              <!-- <div id="modal-container">
+                
+                <div class="modal-background">
+                  <div class="modal">
+                    <div id="chartdiv"> </div>
+                    
+                  </div>
+                </div>
+              </div> -->
+             
+               <p class="transform3">
+                EagleAnt provides the service of revolutionary decentralised video rendering, Now you can reder your editied video hustle free without any tension of high processing power systems.
+
+              </p>
+              <!-- <p class="transform4" style="">
+                EagleAnt provides the service of revolutionary decentralised video rendering, Now you can reder your editied video hustle free without any tension of high processing power systems.
+
+              </p>
+              <p class="transform5" style="">
+                EagleAnt provides the service of revolutionary decentralised video rendering, Now you can reder your editied video hustle free without any tension of high processing power systems.
+
+              </p>  -->
+              <div>
+                <div class="about--options" style="padding-top:-15px;margin-left: 20px; ">
+              
+                  <a id="button" class="transform" style="background-image: 'url(../img/eagleant.png)';" href="#0">
+                    <div class="chartdiv1">Token Distribution</div>
+                    <div id="chartdiv" class="chartdiv"></div>
+                    
+                    <h3>EagleAnt</h3>
+                  </a>
+                  <a id="button1" class="transform1" style="background-image: 'url(../img/anteagle1.png)';" href="#0">
+                    <h3>AntEagle</h3>
+                  </a>
+                  <a id="button2" class="transform2" style="background-image: 'url(../img/eagletoken.png)';" href="#0">
+                    <h3>EagleToken</h3>
+                  </a>
+                </div>
+              </div>
+              
+              
+            </div>
+          </li>
+          <li class="l-section section">
+         <div class="about1 team1">
+              <div class="about--banner">
+               
+                  <h1 style="font-size:2rem">Our Team</h1>
+               
+                <div class="box">
+                  <div class="card">
+                    <div class="imgBx">
+                      <span>
+                      </span>
+                        <img src="assets/img/manish.jpg" alt="images" style="border-radius: 100px;">
+                    </div>
+                    <div class="details">
+                        <h2>Manish Soni<br><span> CEO(Founder) <img src="assets/img/link.png" onclick="javascript:window.location='https://www.linkedin.com/in/manish-soni-72ba9615b/'" height="15" width="15" style="position: inherit; cursor: pointer; "/></span></h2>
+                    </div>
+                  </div>
+                
+                   <div class="card">
+                     <div class="imgBx">
+                        <img src="assets/img/aman1.png" alt="images" style="border-radius: 100px;">
+                     </div>
+                     <div class="details">
+                        <h2>Aman Agarwal<br><span>Blockchain Developer <img src="assets/img/link.png" onclick="javascript:window.location='https://www.linkedin.com/in/aman-agarwal-b35115217/'" height="15" width="15" style="position: inherit; cursor: pointer; "/></span></h2>
+                      </div>
+                   </div>
+            
+                   <div class="card">
+                     <div class="imgBx">
+                        <img src="assets/img/sherry.png" alt="images" style="border-radius: 100px;">
+                     </div>
+                     <div class="details">
+                        <h2>Sherry Narnolia<br><span>Content Creator<img src="assets/img/link.png" onclick="javascript:window.location='https://www.linkedin.com/in/sherry-narnolia-b81604159/'" height="15" width="15" style="position: inherit; cursor: pointer; "/></span></h2>
+                      </div>
+                   </div>
+                   <div class="card">
+                    <div class="imgBx">
+                       <img src="assets/img/sonam.png" alt="images" style="border-radius: 100px;">
+                    </div>
+                    <div class="details">
+                       <h2>Sonam Bahukhandi<br><span>Marketing Strategist<img src="assets/img/link.png" onclick="javascript:window.location='https://www.linkedin.com/in/sonam-bahukhandi-065b25159/'" height="15" width="15" style="position: inherit; cursor: pointer; "/></span></h2>
+                     </div>
+                  </div>
+                  <div class="card">
+                    <div class="imgBx">
+                       <img src="assets/img/shankar.jpg"  alt="images" style="border-radius: 100px;">
+                    </div>
+                    <div class="details">
+                       <h2>Shankar Ram<br><span>Backend Developer<img src="assets/img/link.png" onclick="javascript:window.location='https://www.linkedin.com/in/shankar-ram-m-572a7016b/'" height="15" width="15" style="position: inherit; cursor: pointer; "/></span></h2>
+                     </div>
+                  </div>
+                  <div class="card">
+                    <div class="imgBx">
+                       <img src="assets/img/swati.png" alt="images" style="border-radius: 100px;">
+                    </div>
+                    <div class="details">
+                       <h2>Swati Mandal<br><span>Frontend Developer<img src="assets/img/link.png" onclick="javascript:window.location='https://www.linkedin.com/in/manish-soni-72ba9615b/'" height="15" width="15" style="position: inherit; cursor: pointer; "/></span></h2>
+                     </div>
+                  </div>
+             
+              </div>
+                
+            
+              </div>
+            </div> 
+            <div class="container1" style="margin-top: 5rem;">
+             
+               <h3><img src="assets/img/manish.jpg" height="50" width="50" style="border-radius: 200px; margin-bottom: -1rem;">&nbsp;&nbsp;  <a href="https://www.linkedin.com/in/manish-soni-72ba9615b/" style="text-decoration: none; color: white;" class="effect-shine">Manish Soni CEO <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Founder)</a></h3>
+               <h3><img src="assets/img/aman1.png" height="50" width="50" style="border-radius: 200px; margin-bottom: -1rem;">&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://www.linkedin.com/in/aman-agarwal-b35115217/" style="text-decoration: none; color: white;" class="effect-shine">Aman Agarwal<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Blockchain Developer)</a></h3>
+               <h3><img src="assets/img/sherry.png" height="50" width="50" style="border-radius: 200px; margin-bottom: -1rem;">&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://www.linkedin.com/in/sherry-narnolia-b81604159/" style="text-decoration: none; color: white;" class="effect-shine">Sherry Narnolia <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Content Creator)</a></h3>
+               <h3><img src="assets/img/sonam.png" height="50" width="50" style="border-radius: 200px; margin-bottom: -1rem;">&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://www.linkedin.com/in/sonam-bahukhandi-065b25159/" style="text-decoration: none; color: white;" class="effect-shine">Sonam Bahukhandi <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Marketing Strategist)</a></h3>
+               <h3><img src="assets/img/shankar.jpg" height="50" width="50" style="border-radius: 200px; margin-bottom: -1rem;">&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://www.linkedin.com/in/shankar-ram-m-572a7016b/" style="text-decoration: none; color: white;" class="effect-shine">Shankar Ram<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Backend Developer)</a></h3>
+               <h3><img src="assets/img/swati.png" height="50" width="50" style="border-radius: 200px; margin-bottom: -1rem;">&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://www.linkedin.com/in/the-rebellious-ana/" style="text-decoration: none; color: white;" class="effect-shine">Swati Mandal<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Frontend Developer)</a></h3>
+              
+              
+             
+           </div>
+          </li>
+             
+
+        </ul>
+      
+
+
+      </div>
+    </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">Home</li>
+    <li>Rendering</li>
+            <li>Staking</li>
+            <li>Insurance</li>
+            <li>Roadmap</li>
+            
+            <li>Tokenomics</li>
+            <li>Team</li>
+              
+  </ul>
+
+</div>
+<div  class="footer1"><img src="assets/img/twitter.png" onclick="javascript:window.location='https://twitter.com/anteagle_'" style="margin-bottom: -0.6rem;background-color: white;border-radius:5px" height="30" width="30"> @anteagle_</div>
+<div class="footer2"><img src="assets/img/telegram.png" onclick="javascript:window.location='https://t.me/anteagle_'" style="margin-bottom: -0.6rem;margin-left:8rem;background-color: white;border-radius:5px" height="30" width="30"> @anteagle</div>
+<div class="footer3">Copyright © Opulentia Cresco Private Limited</div>
+<div class="footer4">For any queries contact:- support@anteagle.tech</div>
+
+
+
+
+<script>
+  // title js
+
+(function ($) {
+  $(function () {
+
+    
+
+  });
+})(jQuery);
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  let rect = document.getElementById("rect");
+let username = document.getElementById("username");
+let password = document.getElementById("password");
+
+function handle1() {
+	rect.setAttribute("class", "rect2");
+}
+
+function handle2() {
+	rect.setAttribute("class", "rect1");
+}
+
+//For codepen header!!!
+
+
+
+</script>
+
+
+  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+<script>
+$("#button").click(function() {
+  $('.transform').toggleClass('transform-active');  
+  $('.transform1').toggleClass('transform1-active');   
+  $('.transform2').toggleClass('transform2-active');   
+  $('.transform3').toggleClass('transform3-active');    
+  $('.transform4').toggleClass('transform4-active');   
+  $('.token').toggleClass('token-active')    
+  $('.token-image').toggleClass('token-image-active')   
+  $('.chartdiv').toggleClass('chartdiv-active') 
+  $('.chartdiv1').toggleClass('chartdiv1-active')    
+});
+$("#button1").click(function() {
+  $('.transform').toggleClass('transform-active-none');
+  $('.transform1').toggleClass('transform1-active-top');
+  $('.transform2').toggleClass('transform2-active-none');
+  $('.transform3').toggleClass('transform3-active');
+  $('.transform4').toggleClass('transform4-active');
+  $('.token').toggleClass('token-active')
+  $('.token-image').toggleClass('token-image-active')
+  $('.chartdiv').toggleClass('chartdiv-active')
+  $('.chartdiv1').toggleClass('chartdiv1-active')
+});
+$("#button2").click(function() {
+  $('.transform').toggleClass('transform-active-none');
+  $('.transform1').toggleClass('transform1-active-none');
+  $('.transform2').toggleClass('transform2-active-top');
+  $('.transform3').toggleClass('transform3-active');
+  $('.transform4').toggleClass('transform4-active');
+  $('.token').toggleClass('token-active')
+  $('.token-image').toggleClass('token-image-active')
+  $('.chartdiv').toggleClass('chartdiv-active')
+  $('.chartdiv1').toggleClass('chartdiv1-active')
+});
+
+$('.button').click(function(){
+  var buttonId = $(this).attr('id');
+  console.log(buttonId)
+  $('#modal-container').removeAttr('class').addClass(buttonId);
+  $('body').addClass('modal-active');
+})
+
+$('#modal-container').click(function(){
+  $(this).addClass('out');
+  $('body').removeClass('modal-active');
+});
+
+  var chart = AmCharts.makeChart( "chartdiv", {
+  "type": "pie",
+  "theme": "light",
+  "dataProvider": [ {
+    "country": "Video Rendering Service (Will be liquidated according to demand and supply of content creators)",
+    "value": 35
+  }, {
+    "country": "Public Sale",
+    "value": 7
+  },
+  
+  {
+    "country": "Liquidity",
+    "value": 10
+  },
+  {
+    "country": "Team",
+    "value": 13
+  },
+  {
+    "country": "Marketing/Rewards",
+    "value": 20
+  },
+  {
+    "country": "Reserve",
+    "value": 5
+  },
+  {
+    "country": "Developement",
+    "value": 10
+  }
+],
+  "valueField": "value",
+  "titleField": "country",
+  "outlineAlpha": 0.4,
+  "depth3D": 15,
+  "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+  "angle": 30,
+  "export": {
+    "enabled": true
+  }
+} );
+jQuery( '.chart-input' ).off().on( 'input change', function() {
+  var property = jQuery( this ).data( 'property' );
+  var target = chart;
+  var value = Number( this.value );
+  chart.startDuration = 0;
+
+  if ( property == 'innerRadius' ) {
+    value += "%";
+  }
+
+  target[ property ] = value;
+  chart.validateNow();
+} );
+
+
+var chart1 = AmCharts.makeChart( "chartdiv1", {
+  "type": "pie",
+  "theme": "light",
+  "dataProvider": [ {
+    "country": "Lithuania",
+    "value": 260
+  }, {
+    "country": "Ireland",
+    "value": 201
+  }, {
+    "country": "Germany",
+    "value": 65
+  }, {
+    "country": "Australia",
+    "value": 39
+  }, {
+    "country": "UK",
+    "value": 19
+  }, {
+    "country": "Latvia",
+    "value": 10
+  } ],
+  "valueField": "value",
+  "titleField": "country",
+  "outlineAlpha": 0.4,
+  "depth3D": 15,
+  "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+  "angle": 30,
+  "export": {
+    "enabled": true
+  }
+} );
+jQuery( '.chart-input' ).off().on( 'input change', function() {
+  var property = jQuery( this ).data( 'property' );
+  var target = chart1;
+  var value = Number( this.value );
+  chart1.startDuration = 0;
+
+  if ( property == 'innerRadius' ) {
+    value += "%";
+  }
+
+  target[ property ] = value;
+  chart1.validateNow();
+} );
+
+
+var chart2 = AmCharts.makeChart( "chartdiv2", {
+  "type": "pie",
+  "theme": "light",
+  "dataProvider": [ {
+    "country": "Lithuania",
+    "value": 260
+  }, {
+    "country": "Ireland",
+    "value": 201
+  }, {
+    "country": "Germany",
+    "value": 65
+  }, {
+    "country": "Australia",
+    "value": 39
+  }, {
+    "country": "UK",
+    "value": 19
+  }, {
+    "country": "Latvia",
+    "value": 10
+  } ],
+  "valueField": "value",
+  "titleField": "country",
+  "outlineAlpha": 0.4,
+  "depth3D": 15,
+  "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+  "angle": 30,
+  "export": {
+    "enabled": true
+  }
+} );
+jQuery( '.chart-input' ).off().on( 'input change', function() {
+  var property = jQuery( this ).data( 'property' );
+  var target = chart2;
+  var value = Number( this.value );
+  chart2.startDuration = 0;
+
+  if ( property == 'innerRadius' ) {
+    value += "%";
+  }
+
+  target[ property ] = value;
+  chart2.validateNow();
+} );
+</script>
+
+<!------ Include the above in your HEAD tag ---------->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+
+</body>
+</html>

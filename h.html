@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.iframely-embed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: white;
+}
+
+#app {
+  z-index: 100;
+}
+
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  padding-bottom: 4vmin;
+  height: 90vh;
+  width: 100%;
+  background-image: url('assets/img/back2.jpg');
+  background-repeat:no-repeat;
+  background-size: cover;
+  color: whitesmoke;
+}
+
+body {
+  display: grid;
+  padding: 3vmin;
+  background: #252625;
+}
+
+.title {
+  padding-left: 1em;
+  grid-column: 1/-1;
+  grid-row: 1;
+  font-family: "Prata", serif;
+  font-size: 8vw;
+  width: 100%;
+  z-index: 2;
+}
+.title > .title-inner {
+  display: inline-block;
+}
+
+@-webkit-keyframes text-clip {
+  from {
+    -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes text-clip {
+  from {
+    -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@-webkit-keyframes outer-left {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes outer-left {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: none;
+  }
+}
+@-webkit-keyframes inner-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes inner-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: none;
+  }
+}
+.cafe,
+.mozart {
+  -webkit-animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+          animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.title-inner {
+  display: inline-block;
+  -webkit-animation: inner-left 1s 1s ease both;
+          animation: inner-left 1s 1s ease both;
+}
+
+.cafe-inner {
+  display: inline-block;
+  -webkit-animation: inner-left 1s 1s ease both, text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+          animation: inner-left 1s 1s ease both, text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.mozart-inner {
+  -webkit-animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+          animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.title {
+  -webkit-animation: outer-left 1s 1s ease both;
+          animation: outer-left 1s 1s ease both;
+}
+
+.cafe > .cafe-inner {
+  display: inline-block;
+}
+
+.mozart {
+  display: inline-block;
+}
+
+.image {
+  grid-row: 1;
+  grid-column: 2;
+  margin-left: -2rem;
+  opacity: 0.7;
+  -webkit-animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
+          animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
+}
+@-webkit-keyframes image-in {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes image-in {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+.image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body:active * {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+
+
+
+
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.clearfix {
+  display: block;
+}
+
+.iconbb {
+  float: left;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 3%;
+  width: 30%;
+}
+
+.textbb {
+  margin: 5px;
+  padding-left: 34%;
+  width: auto;
+}
+
+
+.download-button-container {
+  position: fixed;
+  width: 300px;
+  height: 70px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.download-button-container.downloading .download-button {
+  width: 70px;
+}
+.download-button-container.downloading .button-text-download {
+  top: 80%;
+  transform: translateY(-50%) scale(1);
+  opacity: 0;
+}
+.download-button-container.downloading .button-wave {
+  left: -10px;
+}
+.download-button-container.downloading .button-wave:before {
+  background-color: transparent;
+  transform: scale(1.6);
+}
+.download-button-container.downloading .button-icon-svg {
+  transform: rotate(0deg);
+}
+.download-button-container.downloading .button-icon-path-square {
+  fill: white;
+}
+.download-button-container.progressing .button-icon {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.download-button-container.progressing .button-ball {
+  left: 43px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+}
+.download-button-container.completed .download-button {
+  width: 230px;
+}
+.download-button-container.completed .button-icon {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.download-button-container.completed .button-icon, .download-button-container.completed .button-svg {
+  opacity: 0;
+  transition: 0.3s;
+}
+.download-button-container.completed .button-text-done {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: 0.8s 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+}
+.download-button-container.completed .border-path {
+  stroke: #00FF8D;
+}
+.download-button-container.completed .button-ball {
+  left: 50%;
+  transition: none;
+  animation: ball-throw-up 0.5s ease-out forwards, ball-throw-down 0.5s 0.5s ease-in forwards, ball-rubber 1s forwards;
+}
+
+@keyframes ball-throw-up {
+  from {
+    transform: translate(-50%, 17.5px);
+  }
+  to {
+    transform: translate(-50%, -60px);
+    background-color: #00FF8D;
+  }
+}
+@keyframes ball-throw-down {
+  from {
+    transform: translate(-50%, -60px);
+  }
+  to {
+    transform: translate(-50%, 80px);
+  }
+}
+@keyframes ball-rubber {
+  from {
+    width: 18px;
+  }
+  25% {
+    width: 13.5px;
+  }
+  50% {
+    width: 18px;
+  }
+  to {
+    width: 9px;
+  }
+}
+.download-button {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 70px;
+  background-color: #2C2E2F;
+  border: none;
+  box-shadow: 0 0 0 3px #02D1FF;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 1s width, 0.3s box-shadow;
+}
+.download-button, .download-button:focus {
+  padding: 0;
+  outline: none;
+}
+.download-button::-moz-focus-inner {
+  border: 0;
+}
+.download-button:hover, .download-button:active, .download-button:focus {
+  box-shadow: 0 0 0 3px #02D1FF, 0 0 20px 3px #007f9b;
+}
+.download-button.button-hidden {
+  box-shadow: 0 0 0 3px transparent;
+}
+.download-button.button-hidden:hover, .download-button.button-hidden:active, .download-button.button-hidden:focus {
+  box-shadow: 0 0 0 3px transparent, 0 0 20px 3px #007f9b;
+}
+
+.button-icon {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: #02D1FF;
+  border-radius: 100%;
+}
+
+.button-icon-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-225deg);
+  transition: 1s transform;
+}
+
+.button-icon-path {
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3px;
+  stroke: white;
+}
+
+.button-icon-path-square {
+  transition: 0.8s 0.2s fill;
+}
+
+.button-text {
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-size: 1.3em;
+  pointer-events: none;
+}
+
+.button-text-download {
+  left: 120px;
+  transform: translateY(-50%);
+  transition: transform 1s, top 0.3s 0.2s, opacity 0.3s 0.2s;
+}
+
+.button-text-done {
+  left: 50%;
+  transform: translate(-50%, 35px);
+  opacity: 0;
+  transition: 0.5s opacity, 1s transform;
+}
+
+.button-wave {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -9999em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+.button-wave:before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background-color: #00faff;
+  border: 5px solid #00faff;
+  border-radius: 100%;
+  transition: 0.5s background, 1s transform;
+  transition-timing-function: ease-out;
+}
+
+.button-progress-container {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.button-svg {
+  width: 100%;
+  height: 100%;
+}
+.button-svg .button-circular-progress {
+  fill: none;
+  stroke-width: 5px;
+  stroke: white;
+}
+
+.button-ball {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: 0;
+  height: 0;
+  background-color: #8c0c1b;
+  border-radius: 100%;
+  pointer-events: none;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.875);
+  /* easeOutBackModified */
+  transition-property: left, top, width, height;
+}
+
+.button-linear-progress {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00AFD7;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.button-linear-progress-bar {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: #02D1FF;
+}
+
+.border-svg {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.border-path {
+  fill: #2C2E2F;
+  stroke-width: 3px;
+  stroke: #02D1FF;
+  transition: 0.3s 1s stroke;
+}
+
+.hidden {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+.face-button {
+  height: 64px;
+  display: inline-block;
+  border: 3px solid #e43;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: #e43;
+  overflow: hidden;
+}
+.face-button .icon {
+  margin-right: 6px;
+}
+.face-button .face-primary,
+.face-button .face-secondary {
+  display: block;
+  padding: 0 32px;
+  line-height: 64px;
+  transition: margin 0.4s;
+}
+.face-button .face-primary {
+  background-color: #e43;
+  color: #fff;
+}
+.face-button:hover .face-primary {
+  margin-top: -64px;
+}
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+</style>
+<body>
+  <div class="example">
+<div id="app">
+  
+  <div class="title">
+    <span style="font-size: 20px;">Something Exciting coming very soon..</span style="font-size: 30px;">
+
+    <div class="title-inner">
+      <div class="cafe">
+        <div class="cafe-inner">CryptoCurrency</div>
+      </div>
+      <div class="mozart">
+        <div class="mozart-inner">Insurance</div>
+      </div>
+    </div>
+    <button class="glow-on-hover" type="button" > Notify Me </button>
+
+  </div>
+
+  <div class="image">
+    <img src="assets/img/" alt=''>
+  </div>
+</div>
+
+
+ 
+
+</div>
+<script>
+  (function() {
+
+// Some variables to use later
+var buttonContainer = document.querySelector('.download-button-container');
+var button = buttonContainer.querySelector('.download-button');
+var ball = buttonContainer.querySelector('.button-ball');
+var circularProgress = buttonContainer.querySelector('.button-circular-progress');
+var circularProgressLength = circularProgress.getTotalLength();
+var linearProgress = buttonContainer.querySelector('.button-linear-progress-bar');
+var borderPath = buttonContainer.querySelector('.border-path');
+var iconSquarePath = buttonContainer.querySelector('.button-icon-path-square');
+var iconLinePath = buttonContainer.querySelector('.button-icon-path-line');
+var circularProgressBar = new Segment(circularProgress, 0, 0);
+var iconSquare = new Segment(iconSquarePath, '30%', '70%');
+var iconLine = new Segment(iconLinePath, 0, '100%');
+var downloading = false;
+var completed = false;
+var progressTimer = 0;
+
+// Capture click events
+button.addEventListener('click', function () {
+    if (!completed) { // Don't do anything if downloading has been completed
+        if (downloading) { // If it's downloading, stop the download
+            stopDownload();
+        } else { // Start the download
+            startDownload();
+        }
+    }
+});
+
+// Start the download
+function startDownload() {
+    // Update variables and CSS classes
+    downloading = true;
+    buttonContainer.classList.add('downloading');
+    animateIcon();
+    // Update progress after 1s
+    progressTimer = setTimeout(function () {
+        buttonContainer.classList.add('progressing');
+        animateProgress();
+    }, 1000);
+}
+
+// Stop the download
+function stopDownload() {
+    // Update variables and CSS classes
+    downloading = false;
+    clearTimeout(progressTimer);
+    buttonContainer.classList.remove('downloading');
+    buttonContainer.classList.remove('progressing');
+    // Stop progress and draw icons back to initial state
+    stopProgress();
+    iconLine.draw(0, '100%', 1, {easing: anime.easings['easeOutCubic']});
+    iconSquare.draw('30%', '70%', 1, {easing: anime.easings['easeOutQuad']});
+}
+
+function animateIcon() {
+    iconLine.draw(0, 0, 0.5);
+    iconSquare.draw(0, '100%', 1);
+}
+
+function stopProgress() {
+    circularProgressBar.stop();
+    circularProgressBar.draw(0, 0, 0);
+    updateProgress(circularProgressBar, true);
+}
+
+// Update the circular and linear progress bars
+function updateProgress(instance, keepBallPosition) {
+    if (!keepBallPosition) {
+        var point = instance.path.getPointAtLength(instance.end);
+        ball.style.transform = 'translate(' + point.x + 'px, ' + point.y + 'px)';
+    }
+    linearProgress.style.transform = 'translateY(-'+ instance.end * 100 / circularProgressLength +'%)';
+}
+
+// Progress animation
+function animateProgress() {
+    // Fake progress animation from 0 to 100%
+    // This should be replaced with real progress data (real progress percent instead '100%'), and maybe called multiple times
+    circularProgressBar.draw(0, '100%', 2.5, {easing: anime.easings['easeInQuart'], update: updateProgress, callback: completedAnimation});
+
+    // // Another example to see a different fake progress (uncomment this and comment line above)
+    // circularProgressBar.draw(0, '40%', 1.5, {easing: anime.easings['easeInOutCubic'], update: updateProgress, callback: function () {
+    //     circularProgressBar.draw(0, '60%', 1, {easing: anime.easings['easeInOutCubic'], update: updateProgress, callback: function () {
+    //         circularProgressBar.draw(0, '100%', 1, {delay: 0.3, easing: anime.easings.easeCircleIn, update: updateProgress, callback: completedAnimation});
+    //     }});
+    // }});
+}
+
+// Animation performed when download has been completed
+function completedAnimation() {
+    // Update variables and CSS classes
+    completed = true;
+    buttonContainer.classList.add('completed');
+    // Wait 1s for the ball animation
+    setTimeout(function () {
+        button.classList.add('button-hidden');
+        ball.classList.add('hidden');
+        borderPath.classList.remove('hidden');
+        // Morphing the path to the second shape
+        var morph = anime({
+            targets: borderPath,
+            d: 'M 40 3.5 a 36.5 36.5 0 0 0 -36.5 36.5 a 36.5 36.5 0 0 0 10.5 26.5 C 35 86.5 90 91.5 120 91.5 S 205 86.5 226 66.5 a 36.5 36.5 0 0 0 10.5 -26.5 a 36.5 36.5 0 0 0 -36.5 -36.5 Z',
+            duration: 100,
+            easing: 'linear',
+            complete: function () {
+                // Morphing the path back to the original shape with elasticity
+                morph = anime({
+                    targets: borderPath,
+                    d: 'M 40 3.5 a 36.5 36.5 0 0 0 -36.5 36.5 a 36.5 36.5 0 0 0 36.5 36.5 C 70 76.5 90 76.5 120 76.5 S 170 76.5 200 76.5 a 36.5 36.5 0 0 0 36.5 -36.5 a 36.5 36.5 0 0 0 -36.5 -36.5 Z',
+                    duration: 1000,
+                    elasticity: 600,
+                    complete: function () {
+                        // Update variables and CSS classes, and return the button to the original state
+                        completed = false;
+                        setTimeout(function () {
+                            buttonContainer.classList.remove('completed');
+                            button.classList.remove('button-hidden');
+                            ball.classList.remove('hidden');
+                            borderPath.classList.add('hidden');
+                            stopDownload();
+                        }, 500);
+                    }
+                });
+            }
+        });
+    }, 1000);
+}
+
+})();
+</script>
+</body>
+</html>
